@@ -1,0 +1,54 @@
+.left-component-wrapper {
+    height: 100%;
+    .top-section {
+        height: 50%;
+        overflow: auto;
+    }
+    .bottom-section {
+        h2 {
+            text-align: center;
+        }
+        height: 50%;
+        overflow: auto;
+    }
+    .numberOfWords, button {
+        background-color: rgb(79, 36, 105);
+        display: flex;
+        flex-direction: row;
+        margin: 20px;
+        justify-content: space-between;
+        border-radius: 5px;
+        border: 1px solid white;
+        padding: 10px;
+        color: #fff;
+        -webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
+        filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
+         
+    }
+    .additional-tools {
+        display: flex;
+        flex-direction: column;
+        
+        
+        .replace-all {
+            display: flex;
+            flex-direction: column;
+
+            input {
+                height: 20px;
+                margin: 10px 20px;
+            }
+        }
+    }
+    button {
+        cursor: pointer;
+        justify-content: center;
+
+    }
+    .wordPercent {
+        overflow: auto;
+    }
+    .button:hover {
+        background-color: green;
+    }
+}

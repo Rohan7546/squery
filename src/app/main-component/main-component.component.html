@@ -1,0 +1,28 @@
+<div class="main-component-container" *ngIf="isDesktopView">
+    <div class="left-container">
+        <app-left-component [textWritten]="textWritten" (onToolClicked)="onToolClicked($event)"></app-left-component>
+    </div>
+    <div class="right-container">
+        <div class="write-here">
+        <textarea class="text-area" spellcheck="false" [(ngModel)]="textWritten" placeholder="Type here ...."></textarea>
+    </div>
+        <div class="footer">
+           <app-footer [textWritten]="textWritten"></app-footer>
+        </div>
+    </div>
+    
+</div>
+
+<div class="main-component-container" *ngIf="!isDesktopView">
+    <div class="right-container">
+        <div class="write-here">
+        <textarea class="text-area" spellcheck="false" [(ngModel)]="textWritten" placeholder="Type here ...."></textarea>
+    </div>
+        <div class="footer">
+           <app-footer [textWritten]="textWritten"></app-footer>
+        </div>
+    </div>
+    <div class="left-container">
+        <app-left-component [textWritten]="textWritten" (onToolClicked)="onToolClicked($event)"></app-left-component>
+    </div>
+</div>

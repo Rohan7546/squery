@@ -1,0 +1,28 @@
+<div class="left-component-wrapper">
+    <div class="top-section">
+
+        <div class="additional-tools">
+            <button class="button" (click)="onClick('uppercase')">Convert UpperCase</button>
+            <button class="button" (click)="onClick('lowercase')">Convert LowerCase</button>
+            <button class="button" (click)="onClick('camelcase')">Convert CamelCase</button>
+            <div class="replace-all">
+                <input type="text" [(ngModel)]="replaceFrom" class="replace-from" placeholder="Text to be replaced">
+                <input type="text" [(ngModel)]="replaceTo" class="replace-to" placeholder="Text to be replaced with">
+                <button class="button" (click)="onClick('replace')">Replace All</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="bottom-section">
+        <h2>Word calculator</h2>
+        <div class="numberOfWords" *ngFor="let i of hashMapEntries">
+            <div class="wordPercent">
+                <span>{{i[0]}}</span>
+                <span></span>
+            </div>
+            <div class="wordCount">
+                <span>{{i[1]}}</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+.footer-wrapper{
+    @media (max-width: 1200px) {
+        gap: 12px;
+    }
+    display: flex;
+        flex-direction: row;
+        gap: 130px;
+        background-color: rgb(86, 68, 127);
+        color: #fff;
+        height: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+            font-size: 20px;
+            word-spacing: 20px;
+        }
+}
