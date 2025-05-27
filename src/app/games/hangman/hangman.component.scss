@@ -1,0 +1,156 @@
+.hangman {
+    display: flex;
+    flex-direction: column;
+
+    .keyboard {
+        background-color: gainsboro;
+        padding: 30px;
+        display: flex;
+        // gap: 30px;
+        flex-direction: column;
+        .chances-left {
+            margin-bottom: 40px;
+            .green {
+                color: green;
+                font-size: 25px;
+            }
+            .red {
+                color: red;
+                font-size: 25px;
+            }
+        }
+    }
+    .keyrow {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+         
+        li {
+            display: flex;
+            flex-direction: row;
+            font-size: 30px;
+            height: 40px;
+            width: 40px;
+            background: linear-gradient(180deg, #282828, #202020);
+            box-shadow: inset -8px 0 8px rgba(0, 0, 0, .15), inset 0 -8px 8px rgba(0, 0, 0, 0.25), 10px 20px 25px rgba(0, 0, 0, .4), 0 0 0 2px rgba(0, 0, 0, .75);
+            border-radius: 8px;
+            text-align: center;
+            justify-content: center;
+            color: #fff;
+            cursor: pointer;
+            @media (max-width: 600px) {
+                font-size: 20px;
+                height: 30px;
+                width: 30px;
+            }
+        }
+        
+    }
+
+    .hangman-guess-word {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        span {
+            font-size: 30px;
+            
+        }
+       
+    }
+    .hangman-image {
+        text-align: center;
+        @media (min-width: 850px) {
+            img {
+                height: 50%;
+                width: 50%;
+                // object-fit: cover;
+                background-size: cover;
+            }
+        }
+        @media (max-width: 850px) {
+            img {
+                height: 100%;
+                width: 100%;
+                // object-fit: cover;
+                background-size: cover;
+            }
+        }
+         
+    }
+
+     .go-back button {
+        background-color: #1E90FF;
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(30, 144, 255, 0.4);
+        transition: all 0.3s ease;
+     }
+     @media (max-width: 600px) {
+        .keyboard {
+            padding: 30px 0px !important;
+        }
+        .keyrow {
+            gap: 5px !important;
+        }
+    }
+
+}
+.opa {
+    opacity: 0.45;
+}
+.result {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    z-index: 9;
+    // left: calc(50% - 200px);
+    top: 10%;
+ 
+    h1 {
+        text-align: center;
+    }
+    @media (max-width: 600px) {
+        img {
+            height: 200px;
+            width: 200px;
+    
+         }
+         left: calc(50% - 100px);
+    }
+
+    @media (min-width: 600px) {
+        
+        img {
+            height: 400px;
+            width: 400px;
+        }
+        left: calc(50% - 200px);
+    }
+     .hangman-button {
+        padding: 24px 12px;
+        background-color: #1E90FF;
+        color: white;
+        padding: 0.6rem 1.2rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(30, 144, 255, 0.4);
+        transition: all 0.3s ease;
+
+     }
+     .result-status-lost, .result-status-won {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+     }
+
+    background-color: gainsboro;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}

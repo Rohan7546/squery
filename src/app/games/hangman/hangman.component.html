@@ -1,0 +1,43 @@
+<div class="hangman" [class.opa]="this.totalChances == 0 || hangManWon">
+    <div class="hangman-image">
+        <img src='./././assets/hangman{{6 - totalChances}}.png' alt="">
+         
+    </div>
+    <div class="keyboard">
+        <div class="chances-left">
+            <span [ngClass]="this.totalChances > 0 ? 'green' : 'red'">Total Chances Left:  {{this.totalChances}}</span>
+        </div>
+        <div class="hangman-guess-word">
+            <span *ngFor="let i of showWord">{{i}}</span>
+        </div>
+
+        <ul class="keyrow" *ngFor="let key of keyWords">
+            <li  (click)="onKeyPress(i)" *ngFor="let i of key">{{i}}</li>
+        </ul>
+    </div>
+
+    <div class="go-back">
+        <button (click)="goBack()"> Go Back</button>
+    </div>
+   
+</div>
+
+    
+<div class="result">
+    <div *ngIf="this.totalChances == 0" class="result-status-lost">
+    <h1>You Lost 😭😭</h1>
+    <img src="./././assets/hangmandeath.gif" alt="shit">
+    <button (click)="reload()" class="hangman-button">Play Again</button>
+    <button (click)="goBack()" class="hangman-button"> Go Back</button>
+
+
+    </div>
+    <div *ngIf="hangManWon" class="result-status-won">
+        <h1>You Win 🎊🎊</h1>
+        <img src="./././assets/dancing.gif" alt="win">
+        <button (click)="reload()" class="hangman-button">Play Again</button>
+        <button (click)="goBack()" class="hangman-button"> Go Back</button>
+
+    </div>
+
+</div>

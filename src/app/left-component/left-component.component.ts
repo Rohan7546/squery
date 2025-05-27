@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-left-component',
@@ -19,11 +20,12 @@ export class LeftComponentComponent implements OnChanges {
   hashMapEntries: any;
   replaceFrom!: string;
   replaceTo!: string;
+charLength = 0;
+  constructor(private router: Router){}
 
   stringCalculation() {
     this.myHashMap = {};
     const x = this.textWritten?.split(/[.\-_, ]/);
-    console.log('fd', x);
     let len = x?.length;
     for (let i = 0; i < len; i++) {
       if (x[i].length) {
@@ -35,7 +37,6 @@ export class LeftComponentComponent implements OnChanges {
       }
     }
     this.hashMapEntries = Object.entries(this.myHashMap);
-    console.log(this.hashMapEntries)
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -56,6 +57,15 @@ export class LeftComponentComponent implements OnChanges {
       if(this.replaceFrom && this.replaceTo)
       this.textWritten = this.textWritten.replaceAll(this.replaceFrom, this.replaceTo);
     }
+    else if(method=='roast') {
+      this.router.navigate(['/roast']);
+    }
+    else if(method =='generate') {
+      this.textWritten = this.getCharofLen(this.charLength);
+    }
+    else if(method==='game') {
+      this.router.navigate(['/hangman'])
+    }
     else { 
       this.textWritten = this.textWritten.split(' ').map((val: string)=>{
         return val[0].toUpperCase() + val.substring(1).toLowerCase();
@@ -63,4 +73,14 @@ export class LeftComponentComponent implements OnChanges {
     }
      this.onToolClicked.emit(this.textWritten);
   }
+
+   getCharofLen(length: number) {
+    let result   = '';
+    let characters   = 'ABC DEF GHI JKLMN OPQR STUV WXYZabc defg hijk lmn opqr stuv wx yz ';
+    let charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+        result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+}
 }

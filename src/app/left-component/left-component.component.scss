@@ -51,4 +51,13 @@
     .button:hover {
         background-color: green;
     }
+    .char-generator {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        input {
+            width: 70%;
+        }
+    }
 }

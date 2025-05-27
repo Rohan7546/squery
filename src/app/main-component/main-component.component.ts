@@ -11,7 +11,6 @@ export class MainComponentComponent implements OnInit{
   isDesktopView: boolean = window.innerWidth >= 1200;
 
   ngOnInit(): void {
-      console.log(this.textWritten)
   }
   onToolClicked(event: string) {
     this.textWritten = event;

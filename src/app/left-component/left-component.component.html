@@ -4,12 +4,19 @@
         <div class="additional-tools">
             <button class="button" (click)="onClick('uppercase')">Convert UpperCase</button>
             <button class="button" (click)="onClick('lowercase')">Convert LowerCase</button>
-            <button class="button" (click)="onClick('camelcase')">Convert CamelCase</button>
+            <button class="button" (click)="onClick('camelcase')">Convert Capitalize</button>
+            <div class="char-generator">
+                <input type="number" [(ngModel)]="charLength"  >
+                <button class="button" (click)="onClick('generate')">Generate Chars</button>
+
+            </div>
             <div class="replace-all">
                 <input type="text" [(ngModel)]="replaceFrom" class="replace-from" placeholder="Text to be replaced">
                 <input type="text" [(ngModel)]="replaceTo" class="replace-to" placeholder="Text to be replaced with">
                 <button class="button" (click)="onClick('replace')">Replace All</button>
             </div>
+            <button class="button" (click)="onClick('game')">Play Hangman</button>
+            <button class="button" (click)="onClick('roast')">Roast Me</button>
         </div>
 
     </div>
